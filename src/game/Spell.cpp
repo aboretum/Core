@@ -1675,12 +1675,9 @@ void Spell::SetTargetMap(SpellEffectIndex effIndex, uint32 targetMode, UnitList&
         {
             if (Unit* pUnitTarget = m_caster->SelectMagnetTarget(m_targets.getUnitTarget(), this, effIndex))
             {
-                if (m_targets.getUnitTarget() != pUnitTarget)
-                {
-                    m_targets.setUnitTarget(pUnitTarget);
-                    targetUnitMap.push_back(pUnitTarget);
-                    break;
-                }
+                m_targets.setUnitTarget(pUnitTarget);
+                targetUnitMap.push_back(pUnitTarget);
+                break;
             }
 
             if (EffectChainTarget > 1)
